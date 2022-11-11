@@ -1,6 +1,7 @@
 # Library class with library name, booklist, and booklender dictionary
 class Library:
-     def init(self, booksList, name):
+
+    def __init__(self, booksList, name):
         self.booksList = booksList
         self.name = name
         self.lendDict = {}
