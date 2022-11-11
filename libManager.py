@@ -83,3 +83,12 @@ def main():
 
         else:
             print('Please enter a valid option')
+
+if __name__ == '__main__':
+    booksList = []
+    databaseName = input('Enter the name of the database file with extension:')
+    bookDatabase = open(databaseName, 'r')
+    for book in bookDatabase:
+        booksList.append(book)
+    library = Library(booksList, 'WilliamF')
+    main()
