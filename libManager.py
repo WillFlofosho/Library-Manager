@@ -18,6 +18,10 @@ class Library:
             print('Book already exists')
         else:
             self.booksList.append(book)
+            bookDatabase = open(databaseName, 'a')
+            bookDatabase.write('\n')
+            # get to new line in text file
+            bookDatabase.write(book)
             print('Book added')
 
     # Checkout book and update database, provide name of who checked out a book, and apologize for not having a book
