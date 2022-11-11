@@ -49,7 +49,7 @@ class Library:
 # this menu works as a loop hat runs until the user breaks it.
 def main():
     while (True):
-        print(f'Welcome ti the {library.name} library. Your options are:')
+        print(f'Welcome to the {library.name} library. Your options are:')
         choice = '''
         1. Display Books
         2. Checkout a Book
