@@ -32,10 +32,54 @@ class Library:
         else:
             print("I'm sorry, we don't have this book in our library.")
 
-    #return book and update database, identify if book isn't from this library.
+    # return book and update database, identify if book isn't from this library.
     def returnBook(self, book):
         if book in self.lendDict.keys():
             self.lendDict.pop(book)
             print('Book returned successfully. Thank you.')
         else:
             print('The book does not exist in the book lending database.')
+
+
+# this is the menu. I will be tackling object creation later.
+# this menu works as a loop hat runs until the user breaks it.
+def main():
+    while (True):
+        print(f'Welcome ti the {library.name} library. Your options are:')
+        choice = '''
+        1. Display Books
+        2. Checkout a Book
+        3. Add a Book
+        4. Return a Book
+        '''
+
+        print(choice)
+
+        userInput = input('Press Q to quit and C to continue:')
+        if userInput == 'C':
+            userChoice = int(input('Select an option to continue:'))
+            if userChoice == 1:
+                library.displayBooks()
+
+            elif userChoice == 2:
+                book = input('Enter the name of the book you want to checkout:')
+                user = input('Enter the name of the user:')
+                library.lendBook(book, user)
+
+            elif userChoice == 3:
+                book = input('Enter the name of the book you want to add:')
+
+                library.addBook(book)
+
+            elif userChoice == 4:
+                book = input('Enter the name of the book you want to return:')
+                library.returnBook(book)
+
+            else:
+                print('Please choose a valid option')
+
+        elif userInput =='Q':
+            break
+
+        else:
+            print('Please enter a valid option')
